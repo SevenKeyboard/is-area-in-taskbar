@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Version>1.0.1</Version>
+    <RootNamespace>SevenKeyboard</RootNamespace>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <IsAotCompatible>true</IsAotCompatible>
+    <IsTaskbarVisibleProjectPath Condition="'$(IsTaskbarVisibleProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../is-taskbar-visible/main-cs/src/SevenKeyboard.IsTaskbarVisible/SevenKeyboard.IsTaskbarVisible.csproj</IsTaskbarVisibleProjectPath>
+    <GetTaskbarHwndProjectPath Condition="'$(GetTaskbarHwndProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../get-taskbar-hwnd/main-cs/src/SevenKeyboard.GetTaskbarHwnd/SevenKeyboard.GetTaskbarHwnd.csproj</GetTaskbarHwndProjectPath>
+    <WindowFromPointProjectPath Condition="'$(WindowFromPointProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../window-from-point/main-cs/src/SevenKeyboard.WindowFromPoint/SevenKeyboard.WindowFromPoint.csproj</WindowFromPointProjectPath>
+    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../../../library-build/main-cs/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(IsTaskbarVisibleProjectPath)" MinimumVersion="1.0.1" />
+    <ProjectReference Include="$(GetTaskbarHwndProjectPath)" MinimumVersion="1.0.0" />
+    <ProjectReference Include="$(WindowFromPointProjectPath)" MinimumVersion="1.0.0" />
+    <InternalsVisibleTo Include="IsAreaInTaskbar.Tests" />
+  </ItemGroup>
+  <Import Project="$(LibraryBuildTargetsPath)" />
+</Project>
