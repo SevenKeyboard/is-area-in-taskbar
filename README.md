@@ -27,9 +27,12 @@ or required to fit inside a taskbar, and secondary taskbars do not match.
 Native hit-testing and the caller's unchanged DPI context determine boundaries.
 
 External references: IsTaskbarVisible 1.x (>=1.0.1), GetTaskbarHwnd 1.x (>=1.0.0),
-WindowFromPoint 1.x (>=1.0.0), and their transitive monitor libraries.
-The shared `library-build` target checks minimum versions and matching majors.
-Override the corresponding `*ProjectPath` or `LibraryBuildTargetsPath`
-MSBuild properties when projects are elsewhere. No dependency sources are copied.
+and WindowFromPoint 1.x (>=1.0.0). The transitive monitor dependencies are
+WinGetWhichMonitor, MonitorExGetUtils, and DisplayMonitorInfoManager
+(each 2.x and at least 2.0.0).
+Use each dependency's `main-cs` branch under a common parent in `<repo>/main-cs`.
+The bundled `build/CheckLibraryVersions.targets` checks minimum versions and
+matching majors. Override the corresponding `*ProjectPath` MSBuild properties
+when projects are elsewhere. Dependency sources remain in their own repositories.
 
 [Build and test instructions](tests/README.md).

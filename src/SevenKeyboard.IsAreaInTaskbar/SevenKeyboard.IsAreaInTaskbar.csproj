@@ -10,7 +10,7 @@
     <IsTaskbarVisibleProjectPath Condition="'$(IsTaskbarVisibleProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../is-taskbar-visible/main-cs/src/SevenKeyboard.IsTaskbarVisible/SevenKeyboard.IsTaskbarVisible.csproj</IsTaskbarVisibleProjectPath>
     <GetTaskbarHwndProjectPath Condition="'$(GetTaskbarHwndProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../get-taskbar-hwnd/main-cs/src/SevenKeyboard.GetTaskbarHwnd/SevenKeyboard.GetTaskbarHwnd.csproj</GetTaskbarHwndProjectPath>
     <WindowFromPointProjectPath Condition="'$(WindowFromPointProjectPath)' == ''">$(MSBuildThisFileDirectory)../../../../window-from-point/main-cs/src/SevenKeyboard.WindowFromPoint/SevenKeyboard.WindowFromPoint.csproj</WindowFromPointProjectPath>
-    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../../../library-build/main-cs/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
+    <LibraryBuildTargetsPath Condition="'$(LibraryBuildTargetsPath)' == ''">$(MSBuildThisFileDirectory)../../build/CheckLibraryVersions.targets</LibraryBuildTargetsPath>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="$(IsTaskbarVisibleProjectPath)" MinimumVersion="1.0.1" />
